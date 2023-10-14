@@ -1,17 +1,18 @@
 import {React, useState} from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 import { authenticate } from '../../service/auth/AuthenticationService';
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    const [showAlert, setShowAlert] = useState(false);
 
     const login = async () => {
         try {
             const token = await authenticate(username, password);
-            // Handle a successful login
         } catch (error) {
-            // Handle login error
+            setShowAlert(true);
         }
     };
 
@@ -45,6 +46,11 @@ const Login = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </Form.Group>
+                        {showAlert && (
+                            <Alert variant="danger" onClose={() => setShowAlert(false)} dismissible>
+                                Wrong Credentials
+                            </Alert>
+                        )}
                         <Row style={{ justifyContent: 'center', textAlign: 'center', margin: '15px' }}>
                             <Col xs="auto">
                                 <Button variant="success" type="button" onClick={login}>
