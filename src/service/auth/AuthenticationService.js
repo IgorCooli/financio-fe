@@ -20,7 +20,10 @@ const authenticate = async (username, password) => {
 };
 
 const logout = () => {
-    // Logout logic
+    const currentHostname = window.location.hostname;
+    const domain = currentHostname === 'localhost' ? 'localhost' : '.yourdomain.com';
+
+    Cookies.remove("x-token", { path: '/', domain });
 };
 
 const getToken = () => {
