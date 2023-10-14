@@ -1,16 +1,18 @@
 import {React, useState} from 'react';
 import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
 import { authenticate } from '../../service/auth/AuthenticationService';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
     const [showAlert, setShowAlert] = useState(false);
+    const navigate = useNavigate();
 
     const login = async () => {
         try {
-            const token = await authenticate(username, password);
+            await authenticate(username, password);
+            navigate('/home');
         } catch (error) {
             setShowAlert(true);
         }
