@@ -12,7 +12,7 @@ const Login = () => {
     const login = async () => {
         try {
             await authenticate(username, password);
-            navigate('/home');
+            navigate('/home', { state: { username: username } });
         } catch (error) {
             setShowAlert(true);
         }

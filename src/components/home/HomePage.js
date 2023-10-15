@@ -2,10 +2,13 @@ import React, {useState} from 'react';
 import {Navbar, Nav, Container, Card, Button, Dropdown} from 'react-bootstrap';
 import { logout } from '../../service/auth/AuthenticationService';
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const HomePage = () => {
     const [showDropdown, setShowDropdown] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
+    const username = location.state.username;
 
     const handleLogout = () => {
         console.log()
@@ -24,6 +27,7 @@ const HomePage = () => {
                         <Nav.Link style={{color: '#E6E6FA'}} href="/profile">Profile</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
+                <span style={{ color: '#E6E6FA', marginRight: '10px' }}>Welcome, {username}</span>
                 <UserIconButton onClick={() => setShowDropdown(!showDropdown)}/>
             </Navbar>
             {showDropdown && <UserDropdown handleLogout={handleLogout}/>}
