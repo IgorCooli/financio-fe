@@ -18,6 +18,10 @@ const Login = () => {
         }
     };
 
+    const register = () => {
+        navigate('/register')
+    }
+
     const containerStyle = {
         backgroundColor: 'white'
     };
@@ -60,7 +64,7 @@ const Login = () => {
                                 </Button>
                             </Col>
                             <Col xs="auto">
-                                <Button variant="warning" type="button">
+                                <Button variant="warning" type="button" onClick={register}>
                                     Register
                                 </Button>
                             </Col>
