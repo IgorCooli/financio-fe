@@ -22,7 +22,7 @@ const authenticate = async (username, password) => {
 const logout = () => {
     const currentHostname = window.location.hostname;
     //TODO no heroku nao está deletando o cookie... analisar
-    const domain = currentHostname === 'localhost' ? 'localhost' : 'financio-fe-53b8b9d0c120.herokuapp.com';
+    const domain = currentHostname === 'localhost' ? 'localhost' : 'financio-fe-53b8b9d0c120';
 
     Cookies.remove("x-token", { path: '/', domain });
 };

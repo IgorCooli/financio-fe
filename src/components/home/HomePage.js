@@ -18,7 +18,7 @@ const HomePage = () => {
 
     return (
         <div>
-            <Navbar style={{backgroundColor: '#9370DB'}} expand="lg">
+            <Navbar style={{backgroundColor: '#159469'}} expand="lg">
                 <Navbar.Brand style={{color: '#E6E6FA', marginLeft: '30px'}}>FinancIO</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -47,15 +47,15 @@ const HomePage = () => {
 
 const UserIconButton = ({onClick}) => (
     <Button
-        style={{backgroundColor: '#E6E6FA', color: '#9370DB', marginLeft: 'auto', marginRight: '30px'}}
+        style={{backgroundColor: '#E6E6FA', color: '#159469', marginLeft: 'auto', marginRight: '30px'}}
         onClick={onClick}
     >
-        <i className="fas fa-user-circle" style={{margin: '2px', color: '#9370DB'}}></i>
+        <i className="fas fa-user-circle" style={{margin: '2px', color: '#159469'}}></i>
     </Button>
 );
 
 const UserDropdown = ({ handleLogout }) => (
-    <div style={{ position: 'absolute', right: '0', zIndex: '1000', backgroundColor: '#9370DB', marginRight: '15px', borderRadius: '5px' }}>
+    <div style={{ position: 'absolute', right: '0', zIndex: '1000', backgroundColor: '#159469', marginRight: '15px', borderRadius: '5px' }}>
         <Dropdown show align="end">
             <Dropdown.Item href="/profile" style={{margin: '10px', color: '#E6E6FA'}}>Profile</Dropdown.Item>
             <div style={{ background: 'linear-gradient(100deg, #ffffff, transparent)', height: '1px' }}></div>
