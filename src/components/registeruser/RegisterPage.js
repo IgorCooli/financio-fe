@@ -13,6 +13,7 @@ const RegisterPage = () => {
         phoneNumber: '',
         monthlyRevenue: 'R$',
     });
+    
 
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
